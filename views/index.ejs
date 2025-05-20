@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7OG+n35J5nI9F5eFF0o3x0Q5iLMz5q0gNtK"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+    <div id="login">
+    <h1><img src="/images/cloud-sun-fill.svg" alt="Weather Icon" class="white-icon" width="50">Weather Data</h1>
+    <form action="/weather" method="POST">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    </div>
+    <div id="info">
+    <% if (weatherData && weatherData.location && weatherData.current) { %>
+    <h2>Weather in <%= weatherData.location.name %></h2>
+    <p>Temperature: <%= weatherData.current.temperature %>°C</p>
+    <p>Humidity: <%= weatherData.current.humidity %>%</p>
+    <p>Description: <%= weatherData.current.weather_descriptions[0] %></p>
+    <% } else if (error) { %>
+    <p><%= error %></p>
+    <% } %>
+    </div>
+</body>
+</html>
