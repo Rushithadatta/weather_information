@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Rushitha Datta",
   "license": "ISC",
@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^1.9.0",
     "body-parser": "^2.2.0",
+    "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   }
